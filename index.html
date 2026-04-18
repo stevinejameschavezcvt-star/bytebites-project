@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ByteBites</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navbar -->
+<nav class="bg-black text-white px-8 py-4 flex justify-between items-center">
+  <h1 class="text-2xl font-bold">🍔 ByteBites</h1>
+  <div class="space-x-6">
+    <a href="#" class="hover:text-yellow-400">Home</a>
+    <a href="#products" class="hover:text-yellow-400">Products</a>
+    <a href="#game" class="hover:text-yellow-400">Game</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center py-24 px-6">
+  <h2 class="text-5xl font-extrabold mb-4">Eat Smart. Eat ByteBites.</h2>
+  <p class="text-lg mb-6">Where technology meets delicious food.</p>
+  <button class="bg-black px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+    Order Now
+  </button>
+</section>
+
+<!-- About -->
+<section class="animate-on-scroll opacity-0 translate-y-10 transition duration-700 max-w-5xl mx-auto py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-6">What Makes Us Different?</h2>
+  <p class="text-gray-600">
+    ByteBites combines technology and food to create a futuristic dining experience.
+  </p>
+</section>
+
+<!-- Products -->
+<section id="products" class="animate-on-scroll opacity-0 translate-y-10 transition duration-700 bg-white py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10">Our Products</h2>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    
+    <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-2xl hover:scale-105 transition duration-300">
+      <h3 class="text-xl font-bold mb-2">🍔 Mega Byte Burger</h3>
+      <p class="text-gray-600">Juicy burger packed with flavor.</p>
+    </div>
+
+    <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-2xl hover:scale-105 transition duration-300">
+      <h3 class="text-xl font-bold mb-2">🍟 AI Fries</h3>
+      <p class="text-gray-600">Perfectly crispy fries.</p>
+    </div>
+
+    <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-2xl hover:scale-105 transition duration-300">
+      <h3 class="text-xl font-bold mb-2">🥤 Cloud Cola</h3>
+      <p class="text-gray-600">Refreshing futuristic drink.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="animate-on-scroll opacity-0 translate-y-10 transition duration-700 py-16 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+  <div>
+    <h2 class="text-2xl font-bold mb-3">🎯 Mission</h2>
+    <p class="text-gray-600">Deliver fun and tech-inspired meals.</p>
+  </div>
+
+  <div>
+    <h2 class="text-2xl font-bold mb-3">👁 Vision</h2>
+    <p class="text-gray-600">Be the top futuristic fast-food brand.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="animate-on-scroll opacity-0 translate-y-10 transition duration-700 bg-white py-16 px-6">
+  <h2 class="text-3xl font-bold text-center mb-10">FAQ</h2>
+
+  <div class="max-w-3xl mx-auto space-y-6">
+    <div>
+      <h3 class="font-semibold">Do you offer delivery?</h3>
+      <p class="text-gray-600">Yes, we deliver via our app.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold">What makes ByteBites unique?</h3>
+      <p class="text-gray-600">We combine gaming and food.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Game -->
+<section id="game" class="animate-on-scroll opacity-0 translate-y-10 transition duration-700 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6">🎮 Catch the Byte</h2>
+  <p class="mb-4 text-gray-600">Use arrow keys. Press R to restart.</p>
+
+  <div class="flex justify-center">
+    <canvas id="gameCanvas" width="400" height="300" class="bg-black rounded-lg shadow-lg"></canvas>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white text-center py-6 mt-10">
+  <p>© 2026 ByteBites</p>
+</footer>
+
+<!-- Scroll Animation Script -->
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('opacity-0', 'translate-y-10');
+      entry.target.classList.add('opacity-100', 'translate-y-0');
+    }
+  });
+});
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+<script src="game.js"></script>
+
+</body>
+</html>
